@@ -1,0 +1,65 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+@using SiminnTestApp.Services
+@using SiminnTestApp.Data
+@using DevExpress.Blazor
+@inject StockPriceService StockPriceService
+
+<span>Ticker: </span>
+<input @bind-value="ticker" @bind-value:event="oninput">
+<button disabled="@string.IsNullOrWhiteSpace(ticker)" class="btn btn-primary" @onclick="FetchPrices">Fetch</button>
+
+@if (isFetching)
+{
+    <p>Fetching...</p>
+}
+else if (isData)
+{
+    <DxChart Data="@stockPrice?.charts?.months">
+        <DxChartLineSeries ArgumentField="@((Month m) => Convert.ToDateTime(m.date))"
+                            ValueField="@((Month m) => m.price)"
+                            Name="@stockPrice?.info?.title">
+        </DxChartLineSeries>
+        <DxChartTooltip Enabled=true>
+            @context.Point.Render((seriesPoint) =>
+                @<div style="margin: 0.75rem">
+                    <span>@($"{seriesPoint.Argument: dd MMMM yyyy}: ")</span>
+                    <span>@seriesPoint.Value @stockPrice?.stats?.currency</span>
+                </div>
+            )
+        </DxChartTooltip>
+    </DxChart>
+}
+else if (hasFetched)
+{
+    <p>No data</p>
+}
+
+@code 
+{
+    private string? ticker { get; set; }
+    private StockPrice? stockPrice { get; set; }
+    private bool isFetching { get; set; }
+    private bool isData { get; set; }
+    private bool hasFetched { get; set; }
+
+    protected async Task FetchPrices()
+    {
+        isFetching = true;
+        stockPrice = await StockPriceService.GetStockPricesAsync(ticker);
+        isFetching = false;
+        hasFetched = true;
+        if (stockPrice?.charts?.months?.Count() > 0)
+        {
+            isData = true;
+        }
+        else
+        {
+            isData = false;
+        }
+    }
+}
+
+

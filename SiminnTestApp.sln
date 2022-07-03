@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiminnTestApp", "SiminnTestApp\SiminnTestApp.csproj", "{3E2FB15D-D17F-451A-8054-75DE6A6EBB7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI.GoogleFinance", "WebAPI.GoogleFinance\WebAPI.GoogleFinance.csproj", "{DA04E5D3-AF56-4C22-8287-4CB0EF33E747}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E2FB15D-D17F-451A-8054-75DE6A6EBB7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E2FB15D-D17F-451A-8054-75DE6A6EBB7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E2FB15D-D17F-451A-8054-75DE6A6EBB7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E2FB15D-D17F-451A-8054-75DE6A6EBB7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA04E5D3-AF56-4C22-8287-4CB0EF33E747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA04E5D3-AF56-4C22-8287-4CB0EF33E747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA04E5D3-AF56-4C22-8287-4CB0EF33E747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA04E5D3-AF56-4C22-8287-4CB0EF33E747}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {84BED476-DC43-44C7-81E8-9BBF4B89C636}
+	EndGlobalSection
+EndGlobal

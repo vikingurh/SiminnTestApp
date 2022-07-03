@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "40WI80MHI4wEMKUXHxd/Uc/OfA8ExCW6ded6EXD52DM=",
+  "Source": "WebAPI.GoogleFinance",
+  "BasePath": "_content/WebAPI.GoogleFinance",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
